@@ -1,139 +1,117 @@
 <!DOCTYPE html>
-
-<html class="light dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Arogya-Vediya Health Bot</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#39E079", "background-light": "#f6f8f7", "background-dark": "#122017", "bot-bubble": "#e9f0f4", "accent-teal": "#d1e3e9"}, fontFamily: {display: "Noto Serif"}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}}}};</script>
-<style>
-        body {
-            font-family: 'Manrope', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .safe-area-bottom {
-            padding-bottom: env(safe-area-inset-bottom);
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .chat-container {
-            height: calc(100vh - 180px);
-        }
+<html class="light dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Arogya-Vediya Health Bot</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class", 
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#39E079", 
+                        "background-light": "#f6f8f7", 
+                        "background-dark": "#122017", 
+                        "bot-bubble": "#e9f0f4", 
+                        "accent-teal": "#d1e3e9"
+                    }, 
+                    fontFamily: {display: "Noto Serif"}, 
+                    borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}
+                }
+            }
+        };
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; -webkit-tap-highlight-color: transparent; min-height: max(884px, 100dvh); }
+        .safe-area-bottom { padding-bottom: env(safe-area-inset-bottom); }
+        .custom-scrollbar::-webkit-scrollbar { display: none; }
+        .chat-container { height: calc(100vh - 180px); }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+</head>
 <body class="bg-background-light dark:bg-background-dark font-display">
-<!-- Top Navigation Bar -->
+
 <div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-<div class="flex items-center p-4 justify-between max-w-md mx-auto">
-<div class="flex items-center gap-3">
-<div class="text-[#121517] dark:text-white cursor-pointer">
-<span class="material-symbols-outlined">arrow_back_ios</span>
+    <div class="flex items-center p-4 justify-between max-w-md mx-auto">
+        <div class="flex items-center gap-3">
+            <div class="text-[#121517] dark:text-white cursor-pointer">
+                <span class="material-symbols-outlined">arrow_back_ios</span>
+            </div>
+            <div class="flex flex-col">
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-primary text-[20px]">clinical_notes</span>
+                    <h2 class="text-[#121517] dark:text-white text-md font-bold leading-tight tracking-tight">Arogya-Vediya</h2>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span class="size-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="text-[10px] uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400">Gemini AI Active</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="flex flex-col">
-<div class="flex items-center gap-1.5">
-<span class="material-symbols-outlined text-primary text-[20px]">clinical_notes</span>
-<h2 class="text-[#121517] dark:text-white text-md font-bold leading-tight tracking-tight">Arogya-Vediya</h2>
-</div>
-<div class="flex items-center gap-1">
-<span class="size-2 bg-green-500 rounded-full animate-pulse"></span>
-<span class="text-[10px] uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400">Gemini AI Active</span>
-</div>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<button class="p-2 rounded-full hover:bg-gray-200/50 dark:hover:bg-gray-700/50 transition-colors">
-<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">account_circle</span>
-</button>
-</div>
-</div>
-</div>
+
 <main class="max-w-md mx-auto flex flex-col min-h-screen">
-<!-- Header Image / Hero Branding -->
-<div class="px-4 py-4">
-<div class="w-full h-32 bg-gradient-to-br from-primary/20 to-accent-teal/30 dark:from-primary/10 dark:to-accent-teal/5 rounded-xl flex items-center justify-center relative overflow-hidden">
-<div class="absolute inset-0 opacity-20" data-alt="Subtle geometric medical pattern background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABRM_8mkA4N0ebvA3vKGyWNY7iPKsP7ozdP_U9Y1iuZ9YPfaNSZWGJDp-V4J3hhFInZg4P9BeuKRw-n8CHsiaLyLTAnSmQhfSfYFqdDQjl5B-pMkwWQwyGl5J9FLv201IoguwMVbbPOeshoiRWBWk6YPPeJQFNSMyr6c9-qBqLn2hbTAv3v2cjhUpc1BmMUVPhRrRSQw6F4ujkEW9hBnfXGjY_IqZjlSKFyKiwLqTV1pDmdUPfvenLF9ze7qt08xCcwh9vlQjh8w");'></div>
-<div class="relative z-10 text-center">
-<div class="inline-flex p-3 bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow-sm mb-2">
-<span class="material-symbols-outlined text-primary text-3xl">smart_toy</span>
-</div>
-<p class="text-[11px] font-bold text-primary dark:text-primary/80 uppercase tracking-widest">Powered by Google Gemini</p>
-</div>
-</div>
-</div>
-<!-- Chat Area -->
-<div class="flex-1 px-4 space-y-6 pb-40 overflow-y-auto chat-container custom-scrollbar">
-<!-- Bot Message -->
-<div class="flex items-end gap-3 max-w-[85%] animate-fade-in">
-<div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-full shrink-0">
-<span class="material-symbols-outlined text-primary text-sm">health_and_safety</span>
-</div>
-<div class="flex flex-col gap-1.5">
-<p class="text-gray-500 dark:text-gray-400 text-[11px] font-medium ml-1">Health Bot</p>
-<div class="bg-bot-bubble dark:bg-gray-800 p-4 rounded-xl rounded-bl-none shadow-sm">
-<p class="text-gray-800 dark:text-gray-100 text-[15px] leading-relaxed">
-                            Hello! I am your Health Bot from Arogya-Vediya. I'm here to assist with your medical queries and vitals tracking. How can I help you today?
-                        </p>
-</div>
-</div>
-</div>
-<!-- User Typing Simulation (Visual Placeholder) -->
-<div class="flex items-center gap-1.5 ml-12">
-<span class="size-1.5 bg-gray-300 dark:bg-gray-600 rounded-full"></span>
-<span class="size-1.5 bg-gray-300 dark:bg-gray-600 rounded-full"></span>
-<span class="size-1.5 bg-gray-300 dark:bg-gray-600 rounded-full"></span>
-</div>
-</div>
-<!-- Bottom Fixed Controls -->
-<div class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 pt-3 safe-area-bottom">
-<div class="max-w-md mx-auto px-4">
-<!-- Chips / Suggestions -->
-<div class="flex gap-2.5 overflow-x-auto pb-4 custom-scrollbar">
-<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 shadow-sm hover:border-primary/50 transition-all">
-<span class="material-symbols-outlined text-[18px] text-primary">monitor_heart</span>
-<span class="text-gray-700 dark:text-gray-200 text-[13px] font-semibold">Check vitals</span>
-</button>
-<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 shadow-sm hover:border-primary/50 transition-all">
-<span class="material-symbols-outlined text-[18px] text-primary">restaurant</span>
-<span class="text-gray-700 dark:text-gray-200 text-[13px] font-semibold">Diet suggestions</span>
-</button>
-<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 shadow-sm hover:border-primary/50 transition-all">
-<span class="material-symbols-outlined text-[18px] text-primary">pill</span>
-<span class="text-gray-700 dark:text-gray-200 text-[13px] font-semibold">Medicine info</span>
-</button>
-<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 shadow-sm hover:border-primary/50 transition-all">
-<span class="material-symbols-outlined text-[18px] text-primary">calendar_month</span>
-<span class="text-gray-700 dark:text-gray-200 text-[13px] font-semibold">Book visit</span>
-</button>
-</div>
-<!-- Input Field -->
-<div class="flex items-center gap-3 pb-6">
-<div class="flex-1 flex items-center bg-gray-100 dark:bg-gray-800 rounded-2xl px-4 py-2 focus-within:ring-2 focus-within:ring-primary/30 transition-all">
-<input class="bg-transparent border-none focus:ring-0 text-[15px] flex-1 text-gray-800 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 py-2" placeholder="Type your health concern..." type="text"/>
-<div class="flex items-center gap-1">
-<button class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined">mic</span>
-</button>
-</div>
-</div>
-<button class="size-12 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30 active:scale-95 transition-transform">
-<span class="material-symbols-outlined">send</span>
-</button>
-</div>
-</div>
-</div>
+    <div class="px-4 py-4">
+        <div class="w-full h-32 bg-gradient-to-br from-primary/20 to-accent-teal/30 dark:from-primary/10 dark:to-accent-teal/5 rounded-xl flex items-center justify-center relative overflow-hidden">
+            <div class="relative z-10 text-center">
+                <div class="inline-flex p-3 bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow-sm mb-2">
+                    <span class="material-symbols-outlined text-primary text-3xl">smart_toy</span>
+                </div>
+                <p class="text-[11px] font-bold text-primary dark:text-primary/80 uppercase tracking-widest">Powered by Google Gemini</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="chat-container" class="flex-1 px-4 space-y-6 pb-40 overflow-y-auto chat-container custom-scrollbar">
+        <div class="flex items-end gap-3 max-w-[85%] animate-fade-in">
+            <div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-full shrink-0">
+                <span class="material-symbols-outlined text-primary text-sm">health_and_safety</span>
+            </div>
+            <div class="flex flex-col gap-1.5">
+                <p class="text-gray-500 dark:text-gray-400 text-[11px] font-medium ml-1">Health Bot</p>
+                <div class="bg-bot-bubble dark:bg-gray-800 p-4 rounded-xl rounded-bl-none shadow-sm">
+                    <p class="text-gray-800 dark:text-gray-100 text-[15px] leading-relaxed">
+                        Hello! I am your Health Bot from Arogya-Vediya. How can I help you today?
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="typing-indicator" class="flex items-center gap-1.5 ml-12" style="display: none;">
+            <span class="size-1.5 bg-gray-300 dark:bg-gray-600 rounded-full animate-bounce"></span>
+            <span class="size-1.5 bg-gray-300 dark:bg-gray-600 rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
+            <span class="size-1.5 bg-gray-300 dark:bg-gray-600 rounded-full animate-bounce" style="animation-delay: 0.4s"></span>
+        </div>
+    </div>
+
+    <div class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 pt-3 safe-area-bottom">
+        <div class="max-w-md mx-auto px-4">
+            <div class="flex gap-2.5 overflow-x-auto pb-4 custom-scrollbar">
+                <button class="suggestion-chip flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 shadow-sm">
+                    <span class="text-gray-700 dark:text-gray-200 text-[13px] font-semibold">Diet suggestions</span>
+                </button>
+                <button class="suggestion-chip flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 shadow-sm">
+                    <span class="text-gray-700 dark:text-gray-200 text-[13px] font-semibold">Medicine info</span>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-3 pb-6">
+                <div class="flex-1 flex items-center bg-gray-100 dark:bg-gray-800 rounded-2xl px-4 py-2">
+                    <input id="user-input" class="bg-transparent border-none focus:ring-0 text-[15px] flex-1 text-gray-800 dark:text-gray-100 py-2" placeholder="Type your health concern..." type="text"/>
+                </div>
+                <button id="send-btn" class="size-12 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg active:scale-95 transition-transform">
+                    <span class="material-symbols-outlined">send</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </main>
-</body></html>
+
+<script src="index.js"></script>
+
+</body>
+</html>
