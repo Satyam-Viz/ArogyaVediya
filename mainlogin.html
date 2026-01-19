@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arogya-Vediya</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#359EFF",
+                        "medical-blue": "#0f172a",
+                        "medical-teal": "#0d9488",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0b1117"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        lg: "2rem",
+                        xl: "3rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+<style type="text/tailwindcss">
+        body {
+            min-height: 100dvh;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .flag-gradient {
+            background: linear-gradient(180deg, rgba(255, 153, 51, 0.06) 0%, rgba(255, 255, 255, 0) 50%, rgba(18, 136, 7, 0.06) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-sans bg-background-dark text-white antialiased overflow-x-hidden">
+<div class="fixed inset-0 pointer-events-none flag-gradient z-0"></div>
+<div class="relative z-10 flex min-h-screen w-full flex-col max-w-md mx-auto px-6">
+<header class="pt-14 pb-8 flex flex-col items-center text-center">
+<div class="mb-8">
+<div class="bg-center bg-no-repeat aspect-square bg-contain size-24 drop-shadow-lg" data-alt="Official logo of the Indian Medical Association" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAAqt3dEvTPT_GXrBiJwgINTQRUEU1sByhjDA6IK8XAqjQmT0BXHLqE1-1kxpAdJLe7kUHN0PFPvu-TknVv6XMvKy_Rj0py_kNA0YR5F6lWWdwoFAF0zFU2FrXu0PhozRxsb8As_ag2e2_sARIpjKX8Z6frv1isw9JYHlnEH7Ohv5Kdh4najB2Iz6wrsFVPS5atyGae-90rWvgXhUeEaUqSsMiEEDyaKWCNiUmyKDkUhYL1ftL7V5nMXHz3eH6OLpS3p5zvtlxxw");'>
+</div>
+</div>
+<h1 class="text-white text-5xl font-extrabold tracking-tight mb-3">
+                Arogya-Vediya
+            </h1>
+<p class="text-slate-400 text-sm font-semibold uppercase tracking-[0.25em]">
+                National Health Portal
+            </p>
+</header>
+<main class="flex-1 flex flex-col justify-center gap-6 pb-12">
+<div class="mb-2 text-center">
+<h2 class="text-2xl font-bold text-slate-100 tracking-tight">Select Window</h2>
+</div>
+<a href="Doctorlogin.html">
+<button class="group relative flex flex-col items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2.5rem] p-12 shadow-xl active:scale-[0.97] transition-all duration-200 hover:bg-white/10 hover:border-primary/50">
+<div class="mb-6 p-5 bg-primary/10 rounded-full text-primary group-active:bg-primary group-active:text-white transition-colors">
+<span class="material-symbols-outlined text-5xl block">stethoscope</span>
+</div>
+<span class="text-3xl font-bold text-white">Doctor</span>
+</button></a>
+<a href="Patientlogin.html">
+<button class="group relative flex flex-col items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2.5rem] p-12 shadow-xl active:scale-[0.97] transition-all duration-200 hover:bg-white/10 hover:border-medical-teal/50">
+<div class="mb-6 p-5 bg-medical-teal/10 rounded-full text-medical-teal group-active:bg-medical-teal group-active:text-white transition-colors">
+<span class="material-symbols-outlined text-5xl block">person</span>
+</div>
+<span class="text-3xl font-bold text-white">Patient</span>
+</button></a>
+</main>
+<footer class="pb-10 text-center">
+<div class="flex justify-center gap-8 mb-6 opacity-60">
+<div class="h-8 w-20 bg-contain bg-no-repeat grayscale brightness-200" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCu2Af-mfR_kOmrsIrf3BQgPjlgR78Q7vUug_bYS6pqHEeYZMOztNaRZrcAXbQSXfxko5l3K-1H_sLghtcXUw8ydiafOXkxV5JlhN5blByLRJU1ZSErYNZh3PCQgFCNQ9jc44ndwvzXQAxor3Gut2B2mOdTRwMg4FzkEIaMH-eocGPlGaUvqL1QvXT_BkHVrtD1wugKpd2CuwztMGTNctpvQpNGFEEYSsO8ZQCV-uQRGpbdLeb-UGhR7VbZT0Ju8bmrvyYIyVvSw");'></div>
+<div class="h-8 w-20 bg-contain bg-no-repeat grayscale brightness-200" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNtUbeFPJyQbm1-07O3GMOcJzwRYSSle50V98PfLjUDcwM3KxTURlztHOZF-Dh2CQXceh6MWRK0ajvg_fpD66dFjStk9SGs2WgCRRJtAKvr2vuG3M0XcScraI8STxMYG6TD6eraYI8rdf0GJrNapgx4ppKsSATOFeLGVtxCYDsM-WsAfH0t1n_IDCVTqUWerMLQclKwDkNyziMOEGVzxFcfK4naq-HGgLlI9cjvfBfcBgDekvVqpmJTukxqp3Gp-1k9bhbh37pUA");'></div>
+</div>
+<p class="text-[11px] text-slate-500 font-bold uppercase tracking-[0.2em]">
+                Government of India • Ministry of Health
+            </p>
+</footer>
+<div class="h-6 w-full bg-transparent"></div>
+</div>
+
+</body></html>
