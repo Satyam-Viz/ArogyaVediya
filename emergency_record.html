@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="light dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arogya-Vediya | Patient Full Medical Record</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#39E079", "background-light": "#f6f8f7", "background-dark": "#122017"}, fontFamily: {display: "Noto Serif"}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}}}};</script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#121616] dark:text-[#f1f3f4] min-h-screen flex flex-col">
+<!-- Sticky Top App Bar -->
+<nav class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur border-b border-[#dde2e3] dark:border-[#3a3f42]">
+<div class="flex items-center p-4 justify-between max-w-lg mx-auto w-full">
+<div class="flex items-center gap-2">
+<a href="Doctorview.html"><button class="flex items-center justify-center size-10 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-primary">arrow_back_ios_new</span>
+</button></a>
+</div>
+<div class="flex flex-col items-center">
+<h1 class="text-xs font-bold uppercase tracking-widest text-[#6a7d81] dark:text-[#a1b0b3]">Arogya-Vediya</h1>
+<h2 class="text-sm font-extrabold leading-tight">Patient Record</h2>
+</div>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 max-w-lg mx-auto w-full pb-32">
+<!-- Patient Profile Header -->
+<header class="p-6 bg-white dark:bg-[#25282c] mt-4 mx-4 rounded-xl shadow-sm border border-[#dde2e3] dark:border-[#3a3f42]">
+<div class="flex items-center gap-6">
+<div class="relative">
+<div class="size-24 rounded-full border-4 border-primary/10 overflow-hidden bg-center bg-no-repeat bg-cover" data-alt="Portrait of middle-aged male patient Arjun" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2kCmcI_t_OZrYpeYbA48RKxAjst5N5nvd1yNmLs5RHd1LxmDrrMGNPwDqn9JBLs8PcMKYpH1acVDeTvw0lz8zpehQb5McC4aLs544qV53bDb7raM3ugK5_tbtehQWLHqTpXNCVKMIlzeq_GIjFZkz4TnthUI69byl5kWdydD9cDksBpOaZPXrVd2hq4b6zqu8W6pbpImVyxMfrpXPF9Fo-2vCzv0W7whjx1rim_xfJr8c_30ttY2qbCHfcDJlOARWfNSgv6vnGg')">
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full ring-2 ring-white dark:ring-[#25282c]">
+                        O+
+                    </div>
+</div>
+<div class="flex flex-col">
+<h3 class="text-2xl font-extrabold tracking-tight text-[#121616] dark:text-white">Arjun Ratnayake</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-sm font-medium text-[#6a7d81] dark:text-[#a1b0b3]">42 yrs</span>
+<span class="size-1 bg-[#dde2e3] rounded-full"></span>
+<span class="text-sm font-medium text-[#6a7d81] dark:text-[#a1b0b3]">Male</span>
+</div>
+<div class="mt-3 flex gap-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300">
+                            Hypertension
+                        </span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300">
+                            Allergy: Penicillin
+                        </span>
+</div>
+</div>
+</div>
+</header>
+<!-- Navigation Tabs -->
+<div class="sticky top-[73px] z-40 bg-background-light dark:bg-background-dark py-4 px-4 overflow-x-auto hide-scrollbar">
+<div class="flex gap-2 min-w-max">
+<button class="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-bold shadow-md shadow-primary/20">Summary</button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-[#25282c] text-[#6a7d81] dark:text-[#a1b0b3] border border-[#dde2e3] dark:border-[#3a3f42] text-sm font-bold">Lab Reports</button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-[#25282c] text-[#6a7d81] dark:text-[#a1b0b3] border border-[#dde2e3] dark:border-[#3a3f42] text-sm font-bold">Vaccines</button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-[#25282c] text-[#6a7d81] dark:text-[#a1b0b3] border border-[#dde2e3] dark:border-[#3a3f42] text-sm font-bold">Imaging</button>
+</div>
+</div>
+<!-- Section: Medical History -->
+<section class="mt-2">
+<div class="flex items-center justify-between px-6 py-2">
+<h4 class="text-lg font-extrabold text-[#121616] dark:text-white">Medical History</h4>
+<button class="text-primary text-sm font-bold">View All</button>
+</div>
+<div class="mx-4 space-y-2">
+<div class="flex items-center gap-4 bg-white dark:bg-[#25282c] p-4 rounded-xl border border-[#dde2e3] dark:border-[#3a3f42]">
+<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined">thermometer</span>
+</div>
+<div class="flex-1">
+<p class="text-base font-bold leading-tight">Seasonal Influenza</p>
+<p class="text-xs text-[#6a7d81] dark:text-[#a1b0b3] mt-0.5">Oct 12, 2023 • Dr. S. Perera</p>
+</div>
+<span class="material-symbols-outlined text-[#6a7d81]">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-[#25282c] p-4 rounded-xl border border-[#dde2e3] dark:border-[#3a3f42]">
+<div class="size-12 rounded-lg bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined">ecg</span>
+</div>
+<div class="flex-1">
+<p class="text-base font-bold leading-tight">Routine Cardiac Checkup</p>
+<p class="text-xs text-[#6a7d81] dark:text-[#a1b0b3] mt-0.5">May 24, 2023 • General Hospital</p>
+</div>
+<span class="material-symbols-outlined text-[#6a7d81]">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Section: Chronic Illnesses -->
+<section class="mt-8">
+<h4 class="text-lg font-extrabold text-[#121616] dark:text-white px-6 py-2">Chronic Illnesses</h4>
+<div class="mx-4 bg-white dark:bg-[#25282c] rounded-xl border border-[#dde2e3] dark:border-[#3a3f42] divide-y divide-[#dde2e3] dark:divide-[#3a3f42]">
+<div class="p-4 flex justify-between items-center">
+<div>
+<p class="text-base font-bold">Hypertension (Stage 1)</p>
+<p class="text-xs text-[#6a7d81] dark:text-[#a1b0b3]">Diagnosed: Feb 2021</p>
+</div>
+<span class="px-3 py-1 bg-red-50 text-red-600 dark:bg-red-900/10 text-[10px] font-bold uppercase tracking-wider rounded border border-red-100 dark:border-red-900/30">Active</span>
+</div>
+<div class="p-4 flex justify-between items-center">
+<div>
+<p class="text-base font-bold">Type 2 Diabetes</p>
+<p class="text-xs text-[#6a7d81] dark:text-[#a1b0b3]">Diagnosed: Jan 2018</p>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded border border-primary/20">Controlled</span>
+</div>
+</div>
+</section>
+<!-- Section: Past Surgeries -->
+<section class="mt-8">
+<h4 class="text-lg font-extrabold text-[#121616] dark:text-white px-6 py-2">Past Surgeries</h4>
+<div class="mx-4 bg-primary/5 dark:bg-primary/10 rounded-xl p-4 border border-primary/10 border-dashed">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+<div>
+<p class="text-sm font-bold text-primary">Appendectomy</p>
+<p class="text-xs text-[#6a7d81] dark:text-[#a1b0b3] mt-1 leading-relaxed">Performed at Colombo General Hospital in June 2015. No complications reported during recovery.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Current Medications -->
+<section class="mt-8">
+<div class="flex items-center justify-between px-6 py-2">
+<h4 class="text-lg font-extrabold text-[#121616] dark:text-white">Current Medications</h4>
+<span class="px-2 py-0.5 bg-primary text-white text-[10px] font-bold rounded">3 ACTIVE</span>
+</div>
+<div class="mx-4 space-y-3">
+<div class="bg-white dark:bg-[#25282c] p-4 rounded-xl border border-[#dde2e3] dark:border-[#3a3f42] flex gap-4">
+<div class="size-10 rounded-full bg-[#f1f3f4] dark:bg-[#3a3f42] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">medication</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-base font-bold">Metformin</p>
+<p class="text-sm font-bold text-primary">500mg</p>
+</div>
+<p class="text-xs text-[#6a7d81] dark:text-[#a1b0b3] mt-1">Twice daily, after meals (1-0-1)</p>
+<div class="mt-2 h-1.5 w-full bg-[#f1f3f4] dark:bg-[#3a3f42] rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+<p class="text-[10px] text-[#6a7d81] dark:text-[#a1b0b3] mt-1 font-medium">14 days remaining in cycle</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#25282c] p-4 rounded-xl border border-[#dde2e3] dark:border-[#3a3f42] flex gap-4">
+<div class="size-10 rounded-full bg-[#f1f3f4] dark:bg-[#3a3f42] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">pill</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-base font-bold">Lisinopril</p>
+<p class="text-sm font-bold text-primary">10mg</p>
+</div>
+<p class="text-xs text-[#6a7d81] dark:text-[#a1b0b3] mt-1">Once daily, morning (1-0-0)</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<a href="emergency.id.html"><div class="fixed bottom-8 right-6 z-[60]">
+<button class="flex items-center gap-3 bg-primary text-white px-6 py-4 rounded-full shadow-2xl shadow-primary/40 hover:scale-105 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined font-bold">prescriptions</span>
+<span class="font-bold text-sm tracking-tight">Create Prescription</span>
+</button>
+</div></a>
+<!-- iOS Bottom Home Indicator (Visual Only) -->
+<div class="fixed bottom-0 left-0 right-0 h-8 flex justify-center items-center pointer-events-none">
+<div class="w-32 h-1.5 bg-black/20 dark:bg-white/20 rounded-full"></div>
+</div>
+</body></html>

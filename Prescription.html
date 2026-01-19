@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="light dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Final Digital Prescription View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#39E079", "background-light": "#f6f8f7", "background-dark": "#122017"}, fontFamily: {display: "Plus Jakarta Sans", sans: ["Public Sans", "sans-serif"]}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}}}};</script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .serif-text {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen pb-32">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
+<a href="Prescription-generator.html"><button class="flex items-center justify-center size-10 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-primary">arrow_back_ios_new</span>
+</button></a>
+<h1 class="serif-text text-xl font-bold text-[#0c1b1d] dark:text-white">Digital Prescription</h1>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-primary">share</span>
+</button>
+</div>
+<main class="max-w-md mx-auto px-4 py-6">
+<!-- AI Verification Badge -->
+<div class="mb-6 flex justify-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full">
+<span class="material-symbols-outlined text-[18px] text-primary">verified_user</span>
+<span class="text-xs font-semibold text-primary uppercase tracking-wider">AI Generated &amp; Verified</span>
+</div>
+</div>
+<!-- Doctor Profile Header -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl p-5 shadow-sm mb-6 border border-gray-100 dark:border-zinc-800">
+<div class="flex items-center gap-4 mb-4">
+<div class="size-20 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="Professional portrait of Dr. Arishta Sen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRu7WCKdgbOJSfLooi8q4W90zj8jnw9gAZP19BoNcNgkD8zKQ4kGhG_NqTwyhjhj7OqpnfYBRzMyuuGNt-bCp50zZbKO8xcHWSPlbSz81KbtOWd-I6RvyFg06U-wEh0yF5DWYfng9RTphnlxhCE8rXUq1FhVQbZ7iIVmZNP5AVxiPEJeWNdM8Sk4XchLM9HUxkXiwANnnxfWpl26j9KpyG78S5tyR3v8kf_mZiOLG2r7XBUEZ_M1JDGAMMMwe4f6Xe3FFjxHmcCg");'>
+</div>
+<div class="flex-1">
+<h2 class="serif-text text-xl font-bold text-gray-900 dark:text-white">Dr. Arishta Sen</h2>
+<p class="text-primary text-sm font-medium">Senior General Physician</p>
+<div class="flex items-center gap-1 mt-1 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-xs">badge</span>
+<span>License: #MC-12345-AI</span>
+</div>
+</div>
+<div class="size-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-gray-200 dark:text-zinc-700">medical_services</span>
+</div>
+</div>
+<!-- Patient Mini Summary -->
+<div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-50 dark:border-zinc-800">
+<div>
+<p class="text-[10px] uppercase text-gray-400 font-bold tracking-widest">Patient Name</p>
+<p class="text-sm font-semibold text-gray-800 dark:text-gray-200">John Doe</p>
+</div>
+<div>
+<p class="text-[10px] uppercase text-gray-400 font-bold tracking-widest text-right">Patient ID</p>
+<p class="text-sm font-semibold text-gray-800 dark:text-gray-200 text-right">AV-987654</p>
+</div>
+</div>
+</div>
+<!-- Prescription Content Block -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-zinc-800 mb-6">
+<div class="bg-primary/5 px-6 py-4 flex justify-between items-center border-b border-gray-100 dark:border-zinc-800">
+<h3 class="serif-text text-lg font-bold text-gray-900 dark:text-white">Prescription Details</h3>
+<span class="text-xs text-gray-400">Oct 24, 2023</span>
+</div>
+<!-- Medication List -->
+<div class="p-2">
+<!-- Item 1 -->
+<div class="flex gap-4 p-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-lg transition-colors group">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">pill</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-bold text-gray-900 dark:text-white">Paracetamol 500mg</p>
+<span class="text-[10px] bg-gray-100 dark:bg-zinc-800 px-2 py-0.5 rounded uppercase font-bold text-gray-500">Tablet</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">1-0-1 (Morning &amp; Night)</p>
+<div class="flex items-center gap-4 mt-2">
+<span class="text-xs font-medium text-primary bg-primary/5 px-2 py-1 rounded">5 Days</span>
+<span class="text-xs text-gray-400 italic">After Meals</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 p-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-lg transition-colors group">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">vaccines</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-bold text-gray-900 dark:text-white">Amoxicillin 250mg</p>
+<span class="text-[10px] bg-gray-100 dark:bg-zinc-800 px-2 py-0.5 rounded uppercase font-bold text-gray-500">Capsule</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">1-1-1 (Thrice a day)</p>
+<div class="flex items-center gap-4 mt-2">
+<span class="text-xs font-medium text-primary bg-primary/5 px-2 py-1 rounded">7 Days</span>
+<span class="text-xs text-gray-400 italic">Before Meals</span>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex gap-4 p-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-lg transition-colors group">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">medical_information</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-bold text-gray-900 dark:text-white">Cough Syrup (Z-Link)</p>
+<span class="text-[10px] bg-gray-100 dark:bg-zinc-800 px-2 py-0.5 rounded uppercase font-bold text-gray-500">Liquid</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">5ml - 10ml</p>
+<div class="flex items-center gap-4 mt-2">
+<span class="text-xs font-medium text-primary bg-primary/5 px-2 py-1 rounded">When needed</span>
+<span class="text-xs text-gray-400 italic">Do not exceed 4 times/day</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Notes Section -->
+<div class="p-6 bg-gray-50 dark:bg-zinc-800/30 border-t border-gray-100 dark:border-zinc-800">
+<p class="text-[10px] uppercase text-gray-400 font-bold tracking-widest mb-2">Doctor's Advice</p>
+<p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Drink plenty of warm fluids. Avoid cold drinks and oily food for the next week. Rest is highly recommended. Complete the full course of antibiotics even if symptoms improve.
+                </p>
+</div>
+</div>
+<!-- Bottom Actions -->
+<div class="space-y-3">
+<button class="w-full h-14 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-primary/20 hover:bg-primary/90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+                Print / Download PDF
+            </button>
+<a href="Doctorview.html"><button class="w-full h-14 bg-white dark:bg-zinc-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-zinc-800 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-gray-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">dashboard</span>
+                Back to Dashboard
+            </button></a>
+</div>
+<div class="mt-8 text-center pb-10">
+<p class="text-[10px] text-gray-400 dark:text-zinc-600 uppercase tracking-[3px] serif-text">Arogya-Vediya Health</p>
+</div>
+</main>
+<!-- Simple Home Indicator Placeholder for iOS -->
+<div class="fixed bottom-0 left-0 w-full h-8 bg-background-light dark:bg-background-dark pointer-events-none">
+<div class="mx-auto mt-4 w-32 h-1 bg-gray-300 dark:bg-zinc-700 rounded-full"></div>
+</div>
+</body></html>

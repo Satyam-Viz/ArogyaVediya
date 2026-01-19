@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doctor Emergency Search - Arogya-Vediya</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#39E079", "background-light": "#f6f8f7", "background-dark": "#122017", "card-dark": "#2C2C2C", "border-dark": "#3d3d3d"}, fontFamily: {display: "Space Grotesk", sans: ["Noto Sans", "sans-serif"]}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .input-glow:focus {
+            box-shadow: 0 0 15px rgba(0, 64, 184, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-[430px] mx-auto border-x border-border-dark/20 shadow-2xl">
+<!-- Top Navigation -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-6 pb-4 justify-between sticky top-0 z-50">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 cursor-pointer"><a href="emergency_record.html">
+<span class="material-symbols-outlined">chevron_left</span></a>
+</div>
+<div class="flex flex-col items-center flex-1">
+<span class="text-[10px] tracking-[0.2em] text-primary font-bold uppercase mb-1">Arogya-Vediya</span>
+<h2 class="text-black dark:text-white text-sm font-bold leading-tight tracking-wider uppercase">Emergency Patient Search</h2>
+</div>
+<div class="size-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/40">emergency</span>
+</div>
+</header>
+<main class="flex-1 flex flex-col px-6 pt-8 pb-32">
+<!-- Headline Section -->
+<section class="mb-10">
+<h1 class="text-black dark:text-white tracking-tight text-4xl font-bold leading-none mb-3">
+                    Patient <br/><span class="text-primary">Identification</span>
+</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Mission-critical access for healthcare professionals.</p>
+</section>
+<!-- Primary Input (Manual Entry) -->
+<section class="mb-8">
+<div class="flex flex-col gap-4">
+<label class="flex flex-col gap-2">
+<span class="text-black dark:text-slate-300 text-xs font-bold uppercase tracking-widest pl-1">Unique Emergency ID / Virtual ID</span>
+<div class="relative flex items-stretch">
+<input class="input-glow flex w-full rounded-xl text-black dark:text-white border-2 border-slate-200 dark:border-border-dark bg-white dark:bg-card-dark focus:border-primary dark:focus:border-primary focus:ring-0 h-20 text-center text-4xl font-bold tracking-[0.5em] transition-all" inputmode="numeric" maxlength="3" placeholder="---" type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-primary/40">
+<span class="material-symbols-outlined text-3xl">fingerprint</span>
+</div>
+</div>
+<p class="text-[10px] text-slate-400 mt-1 pl-1">ENTER THE 3-DIGIT PATIENT ID DISPLAYED ON THE WEARABLE OR APP</p>
+</label>
+</div>
+</section>
+<!-- Visual Divider -->
+<div class="flex items-center gap-4 my-4">
+<div class="h-[1px] flex-1 bg-slate-200 dark:bg-border-dark"></div>
+<span class="text-slate-400 text-[10px] font-bold tracking-widest uppercase">OR</span>
+<div class="h-[1px] flex-1 bg-slate-200 dark:bg-border-dark"></div>
+</div>
+<!-- Biometric Section (Action Panel) -->
+<section class="mt-4">
+<div class="p-6 flex flex-col items-center text-center gap-4 rounded-2xl border-2 border-dashed border-slate-200 dark:border-border-dark bg-slate-50 dark:bg-card-dark/30 hover:bg-primary/5 hover:border-primary/50 transition-all cursor-pointer group">
+<div class="bg-primary/10 p-4 rounded-full text-primary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'wght' 200;">fingerprint</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-black dark:text-white text-lg font-bold">Biometric Scan</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed max-w-[200px]">For unconscious or unidentified patients requiring immediate triage</p>
+</div>
+<button class="mt-2 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 bg-primary text-white text-sm font-bold tracking-widest uppercase hover:bg-primary/90 active:scale-95 transition-all">
+<span class="truncate">Start Fingerprint Scan</span>
+</button>
+</div>
+</section>
+<!-- Instructions / Alert -->
+<div class="mt-8 p-4 rounded-lg bg-blue-50 dark:bg-primary/5 border border-primary/20 flex gap-3">
+<span class="material-symbols-outlined text-primary text-xl">info</span>
+<p class="text-slate-600 dark:text-slate-300 text-[11px] leading-normal font-medium italic">
+                    Note: Manual ID search is the fastest method for conscious patients. Ensure biometric sensors are clean before scanning.
+                </p>
+</div>
+</main>
+<!-- Fixed Bottom Action -->
+<div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto p-6 bg-gradient-to-t from-background-light dark:from-background-dark via-background-light dark:via-background-dark to-transparent pt-10">
+<a href="emergency_record.html"><button class="flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl h-16 bg-primary text-white text-base font-bold tracking-wider uppercase shadow-[0_10px_30px_rgba(0,64,184,0.4)] active:scale-95 transition-all">
+<span class="material-symbols-outlined">clinical_notes</span>
+<span>Fetch Full Medical Records</span>
+</button></a>
+</div>
+</div>
+</body></html>

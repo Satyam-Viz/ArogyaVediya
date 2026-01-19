@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arogya-Vediya Patient Health Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#39E079",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#122017",
+                        "surface-dark": "#2c323c",
+                        "accent-teal": "#8dc8ce",
+                        "emergency-red": "#FF3B30",
+                        "ai-blue": "#4285F4",
+                        "ai-purple": "#9B72CB",
+                        "ai-pink": "#D96570"
+                    },
+                    fontFamily: {
+                        display: "Noto Serif"
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        lg: "2rem",
+                        xl: "3rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            min-height: max(884px, 100dvh);
+        }
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        .custom-glass {
+            background: rgba(44, 50, 60, 0.6);
+            backdrop-filter: blur(8px);
+        }
+        #sos-menu {
+            display: none;
+        }
+        #sos-menu-toggle:focus-within #sos-menu,
+        #sos-menu-toggle:hover #sos-menu {
+            display: flex;
+        }
+        .gemini-gradient {
+            background: linear-gradient(135deg, #4285F4 0%, #9B72CB 50%, #D96570 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen pb-48">
+<div class="fixed bottom-44 right-6 z-[70] flex flex-col items-end gap-3 group" id="sos-menu-toggle">
+<div class="flex-col gap-3 mb-2 items-end hidden group-hover:flex" id="sos-menu">
+<button class="bg-emergency-red text-white flex items-center gap-3 pl-4 pr-5 py-3 rounded-2xl shadow-xl active:scale-95 transition-transform border border-white/20">
+<div class="text-right">
+<p class="text-[11px] font-bold uppercase leading-none">Notify Family Doctor</p>
+<p class="text-[9px] opacity-90 leading-tight mt-1 max-w-[140px]">Sends automated SMS with location &amp; vitals</p>
+</div>
+<span class="material-symbols-outlined text-2xl">medical_information</span>
+</button>
+<button class="bg-emergency-red text-white flex items-center gap-3 pl-4 pr-5 py-3 rounded-2xl shadow-xl active:scale-95 transition-transform border border-white/20">
+<div class="text-right">
+<p class="text-[11px] font-bold uppercase leading-none">Call Close Friend</p>
+<p class="text-[9px] opacity-90 leading-tight mt-1">Emergency contact quick-dial</p>
+</div>
+<span class="material-symbols-outlined text-2xl font-bold">person_alert</span>
+</button>
+<button class="bg-white text-emergency-red flex items-center gap-3 pl-4 pr-5 py-3 rounded-2xl shadow-xl active:scale-95 transition-transform border-2 border-emergency-red font-extrabold">
+<div class="text-right">
+<p class="text-[11px] font-bold uppercase leading-none">Call Ambulance</p>
+<p class="text-[9px] text-emergency-red/70 leading-tight mt-1">Direct emergency services</p>
+</div>
+<span class="material-symbols-outlined text-2xl fill-1">ambulance</span>
+</button>
+</div>
+<div class="flex flex-col items-center gap-2">
+<button class="size-16 rounded-full bg-emergency-red shadow-[0_0_25px_rgba(255,59,48,0.5)] flex items-center justify-center text-white active:scale-90 transition-transform ring-4 ring-emergency-red/20 z-[71]">
+<span class="material-symbols-outlined text-4xl font-bold fill-1 group-hover:hidden">e911_emergency</span>
+<span class="material-symbols-outlined text-4xl font-bold hidden group-hover:block">close</span>
+</button>
+<span class="text-[10px] font-extrabold uppercase tracking-widest text-emergency-red bg-emergency-red/10 px-2 py-0.5 rounded-md backdrop-blur-sm group-hover:hidden">SOS</span>
+</div>
+</div>
+<div class="fixed bottom-24 right-6 z-[70] flex flex-col items-center gap-2">
+<a href="Botwindow.html"><button class="gemini-gradient size-14 rounded-full shadow-lg shadow-ai-blue/30 flex items-center justify-center text-white active:scale-90 transition-transform border-2 border-white/20">
+<span class="material-symbols-outlined text-3xl font-bold">auto_awesome</span>
+</button></a>
+<span class="text-[9px] font-bold uppercase tracking-wider text-ai-purple bg-ai-purple/10 px-2 py-0.5 rounded-md backdrop-blur-sm border border-ai-purple/20">Health AI</span>
+</div>
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between max-w-md mx-auto">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border-2 border-primary">
+<img alt="Profile photo of a male patient" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyhD_wHRIMBPLhuOs3CkE2-Qb1wEoaBparzkvwUOnP4lmEQyyKvRHAxEdwh6kFjkP6yCWqJAflwyKrCKd-hDa7Jv_voVbVUg4ENlVDzwbJWTZBea5qx6ErvniNTq-i_7v7j_FuQYAtLutcvd4BnGsflFVw3DUfwxRLCSSSMCRtLlqgMw9RUzA17MW8uZw5JU0gJ9j55SBDhZcha2VnbrbSHvTTXaB7Ia0Bvvq5UTzNlHwoVHkXnnX-wc2e4ODxl6hh82v1HWjsUw"/>
+</div>
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Welcome back,</p>
+<h1 class="text-lg font-extrabold tracking-tight">Ananda Perera</h1>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="size-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-surface-dark border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto px-4 pt-6 space-y-8">
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold tracking-tight">Health Vitals</h2>
+<span class="text-primary text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">sync</span> Real-time
+            </span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-4 border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-2 -top-2 text-6xl opacity-5 text-red-500">favorite</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Heart Rate</p>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-extrabold">72</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Bpm</span>
+</div>
+<div class="mt-3 h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-red-500 w-[72%]"></div>
+</div>
+<p class="text-[9px] font-bold text-red-500 mt-2 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px]">trending_up</span> Normal
+                </p>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-4 border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-2 -top-2 text-6xl opacity-5 text-ai-blue">blood_pressure</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Blood Pressure</p>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-extrabold">120/80</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">mmHg</span>
+</div>
+<div class="mt-3 h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-ai-blue w-[80%]"></div>
+</div>
+<p class="text-[9px] font-bold text-primary mt-2 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px]">check_circle</span> Optimal
+                </p>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-4 border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-2 -top-2 text-6xl opacity-5 text-orange-400">device_thermostat</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Body Temp</p>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-extrabold">36.6</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">°C</span>
+</div>
+<div class="mt-3 h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-orange-400 w-[94%]"></div>
+</div>
+<p class="text-[9px] font-bold text-slate-400 mt-2">Last sync: 5m ago</p>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-4 border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-2 -top-2 text-6xl opacity-5 text-accent-teal">air</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Oxygen Sat.</p>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-extrabold">98</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">%</span>
+</div>
+<div class="mt-3 h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-accent-teal w-[98%]"></div>
+</div>
+<p class="text-[9px] font-bold text-primary mt-2 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px]">verified</span> Excellent
+                </p>
+</div>
+</div>
+</section>
+<section>
+<button class="w-full bg-primary/10 border-2 border-dashed border-primary rounded-2xl p-6 flex flex-col items-center justify-center gap-3 active:scale-[0.98] transition-all group">
+<div class="size-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg group-active:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">description</span>
+</div>
+<div class="text-center">
+<h3 class="text-lg font-extrabold text-primary">View Digital Prescription</h3>
+<p class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mt-1">Updated 2 days ago</p>
+</div>
+</button>
+</section>
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold tracking-tight">Quick Actions</h2>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<p class="text-sm font-extrabold uppercase tracking-wider">Locate Nearest Hospital</p>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 bg-slate-100 dark:bg-background-dark/50 py-3 rounded-xl border border-slate-200 dark:border-slate-700 active:scale-95 transition-transform group">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+<span class="text-xs font-bold uppercase tracking-tight">Government</span>
+</button>
+<button class="flex items-center justify-center gap-2 bg-slate-100 dark:bg-background-dark/50 py-3 rounded-xl border border-slate-200 dark:border-slate-700 active:scale-95 transition-transform group">
+<span class="material-symbols-outlined text-accent-teal">domain</span>
+<span class="text-xs font-bold uppercase tracking-tight">Private</span>
+</button>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-xl font-bold tracking-tight mb-4">Wellness</h2>
+<div class="bg-gradient-to-br from-accent-teal/10 to-transparent dark:bg-surface-dark rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-accent-teal/20 flex items-center justify-center text-accent-teal">
+<span class="material-symbols-outlined text-3xl">self_improvement</span>
+</div>
+<div>
+<h3 class="text-sm font-extrabold uppercase tracking-wider text-slate-500 dark:text-accent-teal">Stress Relief</h3>
+<p class="text-lg font-bold">Yoga &amp; Exercises</p>
+</div>
+</div>
+<button class="bg-accent-teal text-background-dark px-4 py-2 rounded-lg font-bold text-xs uppercase tracking-tighter flex items-center gap-1 shadow-md active:scale-95 transition-transform">
+                Start <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+</div>
+</section>
+<section>
+<h2 class="text-xl font-bold tracking-tight mb-4">Daily Goals</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col items-center">
+<div class="relative size-24 mb-4">
+<svg class="size-full" viewBox="0 0 36 36">
+<path class="text-slate-100 dark:text-slate-800" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="48, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl">water_drop</span>
+</div>
+</div>
+<p class="text-sm font-bold text-slate-500 dark:text-accent-teal uppercase tracking-widest text-[10px]">Water Intake</p>
+<p class="text-lg font-extrabold mt-1">1200<span class="text-xs text-slate-400 font-normal"> / 2500ml</span></p>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col items-center">
+<div class="relative size-24 mb-4">
+<svg class="size-full" viewBox="0 0 36 36">
+<path class="text-slate-100 dark:text-slate-800" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-green-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="75, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-500 text-2xl">potted_plant</span>
+</div>
+</div>
+<p class="text-sm font-bold text-slate-500 dark:text-accent-teal uppercase tracking-widest text-[10px]">Protein (Veg)</p>
+<p class="text-lg font-extrabold mt-1">45<span class="text-xs text-slate-400 font-normal"> / 60g</span></p>
+</div>
+</div>
+</section>
+<section class="pb-12">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold tracking-tight">Active Medications</h2>
+</div>
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-2xl p-5 mb-4 shadow-sm overflow-hidden relative">
+<div class="flex items-start justify-between relative z-10">
+<div class="flex gap-4">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-2xl">medication</span>
+</div>
+<div>
+<h3 class="text-lg font-extrabold">Metformin 500mg</h3>
+<p class="text-sm font-medium text-slate-500 dark:text-accent-teal/80">1 tablet after breakfast</p>
+</div>
+</div>
+</div>
+<div class="mt-4 flex gap-3 relative z-10">
+<button class="flex-1 bg-primary text-background-dark py-3 rounded-xl font-extrabold text-sm shadow-md active:scale-95 transition-transform">Mark as Taken</button>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm h-16 bg-white/90 dark:bg-surface-dark/90 backdrop-blur-lg border border-slate-200 dark:border-slate-700 rounded-full shadow-2xl z-50 flex items-center justify-around px-6">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-1">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Appts</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Records</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span>
+</button>
+</nav>
+
+</body></html>

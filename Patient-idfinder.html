@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doctor Search Dashboard - Arogya-Vediya</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00818f",
+                        "background-light": "#f9fafa",
+                        "background-dark": "#191d24",
+                        "surface-dark": "#2C323C",
+                        "border-dark": "#2e656b",
+                        "text-secondary": "#B3B8C2"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    keyframes: {
+                        'gemini-glow': {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(66, 133, 244, 0.4), 0 0 30px rgba(161, 75, 181, 0.2)' },
+                            '50%': { boxShadow: '0 0 25px rgba(66, 133, 244, 0.7), 0 0 45px rgba(161, 75, 181, 0.5)' }
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-6px)' }
+                        }
+                    },
+                    animation: {
+                        'gemini-glow': 'gemini-glow 3s ease-in-out infinite',
+                        'float': 'float 4s ease-in-out infinite'
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .status-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .gemini-gradient {
+            background: linear-gradient(135deg, #4285F4 0%, #9b72cb 30%, #d96570 70%, #f4af45 100%);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary/30 relative">
+<div class="h-10 w-full bg-background-light dark:bg-background-dark flex items-center justify-between px-6 pt-2">
+<span class="text-xs font-bold text-slate-900 dark:text-white">9:41</span>
+<div class="flex gap-1.5 text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+<span class="material-symbols-outlined text-[14px]">battery_full</span>
+</div>
+</div>
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-10 shrink-0 items-center overflow-hidden rounded-full border border-primary/20">
+    <div class="flex items-center px-4 py-2 justify-between h-14">
+<div class="flex items-center gap-3">
+<a href="Doctorview.html"><button class="p-1 -ml-1 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary">arrow_back_ios_new</span>
+</button></a>
+<h1 class="text-lg font-bold tracking-tight">Prescription Generator</h1>
+</div>
+<img alt="Male doctor profile headshot" class="w-full h-full object-cover" data-alt="Doctor's profile picture portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjpzUi6k-FeaNY9a6IlmU51Aj9aBal6E0ItQGqcCCF_1IFu88xLautTBIoquK4fLLZbv7nuC8SPQ0czgPxGcIp9e9getEOBwz60JwhBgpOKkoSJZYVBgZS72ns2KQoirWjms3XfDYAJyPhYHdd_1Bul6VS9IVBMs3q7XjiL1FwpIpoy4pu5ZPfb8avAr72LIaEwI2ldTrwL7E-BzsghzIRefqzgcjm2lRahnUX5_Hl6Z2C9qcG--IEx9t6zY5FS-uav3DaHpYcQA"/>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 ml-3">Arogya-Vediya</h2>
+<div class="flex items-center gap-2">
+<button class="relative flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-background-dark"></span>
+</button>
+</div>
+</div>
+</div>
+<main class="px-4 pb-24">
+<div class="pt-6 pb-4">
+<div class="flex items-center gap-2 mb-1">
+<span class="size-2 rounded-full bg-emerald-500 status-pulse"></span>
+<p class="text-xs font-medium text-emerald-500 uppercase tracking-widest">On Duty • General Wing</p>
+</div>
+<h2 class="text-slate-900 dark:text-white tracking-tight text-3xl font-extrabold leading-tight">Welcome, Dr. Sharma</h2>
+<p class="text-slate-500 dark:text-text-secondary text-sm mt-1">Identify patient to access clinical records</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-5 rounded-xl border border-slate-200 dark:border-white/5 shadow-xl shadow-black/5 mb-8">
+<label class="flex flex-col mb-4">
+<p class="text-slate-600 dark:text-text-secondary text-sm font-semibold mb-2 uppercase tracking-wider">Patient Lookup</p>
+<div class="flex w-full items-stretch rounded-xl overflow-hidden group">
+<input class="flex w-full min-w-0 flex-1 border border-slate-200 dark:border-border-dark bg-slate-50 dark:bg-[#173236]/40 text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 h-14 placeholder:text-slate-400 dark:placeholder:text-[#8dc8ce] px-4 rounded-l-xl border-r-0 text-lg font-mono tracking-[0.2em]" maxlength="3" placeholder="3-DIGIT ID" type="text"/>
+<div class="text-primary flex border border-slate-200 dark:border-border-dark bg-slate-50 dark:bg-[#173236]/40 items-center justify-center px-4 rounded-r-xl border-l-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+</div>
+</label>
+<div class="relative py-4 flex items-center justify-center">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-slate-200 dark:border-white/5"></div>
+</div>
+<div class="relative bg-white dark:bg-surface-dark px-4">
+<span class="text-[10px] font-bold text-slate-400 dark:text-text-secondary uppercase">Secure Biometrics</span>
+</div>
+</div>
+<button class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white gap-3 shadow-lg shadow-primary/20 hover:bg-primary/90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[28px]">fingerprint</span>
+<span class="text-base font-bold tracking-wide">Scan Patient Fingerprint</span>
+</button>
+</div>
+<div class="flex items-center justify-between mb-4 px-1">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold">Recent Patients</h3>
+<button class="text-primary text-sm font-semibold">See All</button>
+</div>
+<div class="space-y-3">
+<div class="group flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-xl border border-slate-200 dark:border-white/5 hover:border-primary/50 transition-colors">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden border border-primary/20">
+<img alt="Female patient portrait" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Young female patient profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGr9vYtuEcrygAsSSyNxeF5fglhwPQpEZLE3rzAUi-mevUKi0LJ1LywGxoz5AiaE6Okn692pUGOR5cez3it1PdYgSgk9TmlePetjH4gEWJmw4_OjL2NFuJpoRsJADxEU22vy01KjbETaY76tK7ZlKNlV0CvWtES6CtLQJ1f8CHQL9T_hSROpZ8kctcTEws1ZO6SOYz-lbWdLphWkUap23MLR8zTP0keKSf1IZVTAJcu3lpHlrn5Z6jmGBoEzCoc8AnKpQp_qolbA"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="text-slate-900 dark:text-white font-bold text-base">Anita Kapoor</h4>
+<span class="text-[10px] font-bold bg-slate-100 dark:bg-white/10 px-2 py-0.5 rounded text-slate-500 dark:text-text-secondary">ID: X7R</span>
+</div>
+<p class="text-slate-500 dark:text-text-secondary text-xs mt-0.5">Checked-in 14m ago • Ward 402</p>
+<div class="flex gap-3 mt-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-red-400">favorite</span>
+<span class="text-[11px] font-bold text-slate-700 dark:text-slate-300">72 bpm</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">thermostat</span>
+<span class="text-[11px] font-bold text-slate-700 dark:text-slate-300">98.6°F</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-text-secondary">chevron_right</span>
+</div>
+<div class="group flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-xl border border-slate-200 dark:border-white/5 hover:border-primary/50 transition-colors">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden border border-primary/20">
+<img alt="Male patient portrait" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Elderly male patient profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCZhpsJWez5-fLaY_9M0aMjcpLT0XQlXR-Auyh0-mr5L8tU5YllL86nfMCcl9X4dy9eB0fn__UrYW38ha_EwdwXc5QJE9AdzAGlBVvdyQ57pgZUxp1v1Q5nct_dKsnAKD1p3Lr83yy1EAukIaXLc80GSPhqb_SHdZnosNYoArqfILJ-RkC8sWppBhJd7S6ckJt3uGh_v7r8in0jAFQ-3Ej2jnA75B_GJ9obbHaaet52gUewwMFl_H71Vq7QYhI7nLZfuXFgJM4EQ"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="text-slate-900 dark:text-white font-bold text-base">Rajesh Mehta</h4>
+<span class="text-[10px] font-bold bg-slate-100 dark:bg-white/10 px-2 py-0.5 rounded text-slate-500 dark:text-text-secondary">ID: 9B2</span>
+</div>
+<p class="text-slate-500 dark:text-text-secondary text-xs mt-0.5">Checked-in 1h 20m ago • ICU-2</p>
+<div class="flex gap-3 mt-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-red-500 animate-pulse text-sm">emergency</span>
+<span class="text-[11px] font-bold text-red-500">Critical BP</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-text-secondary">chevron_right</span>
+</div>
+<div class="group flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-xl border border-slate-200 dark:border-white/5 hover:border-primary/50 transition-colors">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden border border-primary/20">
+<img alt="Male patient portrait" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Young male patient profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjFYAU0Y6TGZb5t2pZtZhisxmQm3LTKaHr7RZRvlnWEQuo3zQOm17OjkADe4juXb-5bz8OUyAu_jou5f3GPMt3msL6dxUr23s-M5GrxEzQreYvtcDBGZ9RahvFFqd5bwJUia3l582l0TlmuubpNYvzC9pP8oreFMftTTU5GHozPhAaQm2KmPwn1M872VcNyGVI1dpdmYSP-5B9BI1dMjwdGOTLaJ4_AbXzo_jPN3aeb_K_3DvPWRa_sprlN_Qho6P6sIIl5GLOYw"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="text-slate-900 dark:text-white font-bold text-base">Suresh Gupta</h4>
+<span class="text-[10px] font-bold bg-slate-100 dark:bg-white/10 px-2 py-0.5 rounded text-slate-500 dark:text-text-secondary">ID: L33</span>
+</div>
+<p class="text-slate-500 dark:text-text-secondary text-xs mt-0.5">Yesterday • OPD Appointment</p>
+<div class="flex gap-3 mt-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+<span class="text-[11px] font-bold text-slate-700 dark:text-slate-300">Prescription Issued</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-text-secondary">chevron_right</span>
+</div>
+</div>
+</main>
+<div class="fixed bottom-28 right-6 z-[110] animate-float">
+<a href="Botwindow.html"><button class="gemini-gradient size-16 rounded-full flex items-center justify-center shadow-2xl animate-gemini-glow active:scale-95 transition-transform group">
+<span class="material-symbols-outlined text-white text-[32px] font-light fill-1">auto_awesome</span>
+<div class="absolute -top-1 -right-1 size-4 bg-white rounded-full flex items-center justify-center">
+<div class="size-2 bg-primary rounded-full animate-ping"></div>
+</div>
+</button></a>
+<span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-surface-dark/90 px-3 py-1.5 rounded-lg text-xs font-bold text-slate-900 dark:text-white ios-blur border border-white/20 shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Gemini Health Assistant</span>
+</div>
+<nav class="fixed bottom-0 w-full bg-white/90 dark:bg-background-dark/90 ios-blur border-t border-slate-200 dark:border-white/5 px-6 pb-6 pt-3 flex justify-between items-center z-[100]">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[24px]">manage_search</span>
+<span class="text-[10px] font-bold">Search</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-text-secondary">
+<span class="material-symbols-outlined text-[24px]">calendar_today</span>
+<span class="text-[10px] font-medium">Schedule</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-text-secondary">
+<span class="material-symbols-outlined text-[24px]">forum</span>
+<span class="text-[10px] font-medium">Messages</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-text-secondary">
+<span class="material-symbols-outlined text-[24px]">analytics</span>
+<span class="text-[10px] font-medium">Reports</span>
+</button>
+</nav>
+<div class="fixed bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-300 dark:bg-white/20 rounded-full z-[101]"></div>
+
+</body></html>

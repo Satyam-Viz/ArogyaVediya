@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arogya-Vediya | Doctor's View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#39E079",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#122017",
+                        "card-dark": "#232932",
+                        "accent-red": "#ff4d4d"
+                    },
+                    fontFamily: {
+                        display: "Noto Serif",
+                        sans: "Manrope"
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        lg: "2rem",
+                        xl: "3rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ai-glow {
+            box-shadow: 0 0 15px rgba(57, 224, 121, 0.2);
+            border: 1px solid rgba(57, 224, 121, 0.3);
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+            min-height: max(884px, 100dvh);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-white antialiased">
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto">
+<div class="flex items-center gap-2">
+<h2 class="text-lg font-bold tracking-tight font-display">Doctor's View</h2>
+</div>
+<div class="flex items-center gap-3">
+<a href="emergency.id.html"><button class="bg-accent-red text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg shadow-accent-red/20 active:scale-95 transition-transform flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] leading-none">emergency</span>
+                    Emergency
+                </button></a>
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</div>
+</div>
+</div>
+</div>
+<main class="max-w-md mx-auto pb-40">
+<div class="p-4 mt-2">
+<div class="flex items-center gap-5 p-4 rounded-xl bg-white dark:bg-card-dark shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="relative">
+<div class="h-20 w-20 rounded-full bg-cover bg-center ring-2 ring-primary/20" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAnMpogvHFB7_gGUA88ZgPK_HfAgvfAijfZbj0jC8wqPErxmSB76movqjbAGIZktSpWzYXEA1LxFX9XYyVdhoHKpTHGBtbASlvo78DozgnaPgMupiWdqSkdSiQzFwFPWZsCMsVT_9gKaDhvzZJr1cpaSvyIh-4BHBKg1EyZpdxAXgnW3NBHpGM27hpQ7z35TYNy4p_7AhnvnPRnnGD7aD_s_b-IYny4sHCMzt8OU8iiQ_HXwDKPTfZC1gXR9j3_xwoM8A9rpfVHA");'>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white p-1 rounded-full border-2 border-background-dark">
+<span class="material-symbols-outlined text-[14px] block">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<p class="text-2xl font-extrabold tracking-tight leading-none font-display">Arjun Mehta</p>
+<p class="text-slate-500 dark:text-primary mt-1 text-sm font-bold tracking-wider">ID: AV-982341 • M, 42</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+<p class="text-xs text-slate-400 font-medium">Last updated: 2m ago</p>
+</div>
+</div>
+</div>
+</div>
+<div class="px-4 mb-2">
+<div class="ai-glow bg-primary/5 rounded-lg p-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">psychology</span>
+<p class="text-xs font-medium text-slate-600 dark:text-primary/90 leading-snug">
+<span class="font-bold">AI Health Summary:</span> Stable vitals. History of NSAID sensitivity detected. Recommend continuous BP monitoring.
+                </p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 p-4">
+<div class="flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-card-dark p-4 shadow-sm">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-[28px]">bloodtype</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Critical</span>
+</div>
+<div class="mt-1">
+<h2 class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">Blood Group</h2>
+<p class="text-3xl font-black text-primary font-display">O-Pos</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-accent-red/30 dark:border-accent-red/20 bg-white dark:bg-card-dark p-4 shadow-sm">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-accent-red text-[28px]">warning</span>
+<span class="px-1.5 py-0.5 rounded bg-accent-red/10 text-accent-red text-[9px] font-bold uppercase">High Risk</span>
+</div>
+<div class="mt-1">
+<h2 class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">Allergies</h2>
+<p class="text-sm font-bold text-accent-red leading-tight">Penicillin, Peanuts, Sulfa Drugs</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-card-dark p-4 shadow-sm">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-[28px]">medical_services</span>
+</div>
+<div class="mt-1">
+<h2 class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">Conditions</h2>
+<p class="text-sm font-bold text-slate-800 dark:text-white mt-1">Type 2 Diabetes, Hypertension</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-card-dark p-4 shadow-sm">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-[28px]">prescriptions</span>
+</div>
+<div class="mt-1">
+<h2 class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">Active Meds</h2>
+<p class="text-sm font-bold text-slate-800 dark:text-white mt-1">Metformin, Lisinopril</p>
+</div>
+</div>
+</div>
+<h3 class="text-slate-400 text-[10px] font-bold uppercase tracking-widest px-4 pt-4 pb-2">Emergency Contact</h3>
+<div class="mx-4 mb-6">
+<div class="flex items-center gap-4 bg-white dark:bg-card-dark px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="text-primary flex items-center justify-center rounded-full bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined text-[20px]">family_history</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-none">Anjali Mehta (Wife)</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium mt-1">+1 555-901-4422</p>
+</div>
+</div>
+<button class="bg-primary text-white p-2 rounded-full shadow-lg shadow-primary/20 active:scale-90 transition-transform">
+<span class="material-symbols-outlined block text-[18px]">call</span>
+</button>
+</div>
+</div>
+<h3 class="text-slate-400 text-[10px] font-bold uppercase tracking-widest px-4 pt-4 pb-2">Current Vitals</h3>
+<div class="flex gap-4 px-4 overflow-x-auto pb-4 no-scrollbar">
+<div class="flex-shrink-0 bg-white dark:bg-card-dark p-3 rounded-xl border border-slate-200 dark:border-slate-800 w-32 shadow-sm">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tight">Heart Rate</p>
+<div class="flex items-baseline gap-1 mt-1">
+<p class="text-xl font-bold font-display text-primary">78</p>
+<p class="text-[10px] text-slate-500">bpm</p>
+</div>
+</div>
+<div class="flex-shrink-0 bg-white dark:bg-card-dark p-3 rounded-xl border border-slate-200 dark:border-slate-800 w-32 shadow-sm">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tight">Blood Press.</p>
+<div class="flex items-baseline gap-1 mt-1">
+<p class="text-xl font-bold font-display">128/82</p>
+</div>
+</div>
+<div class="flex-shrink-0 bg-white dark:bg-card-dark p-3 rounded-xl border border-slate-200 dark:border-slate-800 w-32 shadow-sm">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tight">SpO2</p>
+<div class="flex items-baseline gap-1 mt-1">
+<p class="text-xl font-bold font-display">98</p>
+<p class="text-[10px] text-slate-500">%</p>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 p-4 pb-8 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-md mx-auto flex flex-col gap-3">
+<a href="Prescription-generator.html"><button class="w-full bg-primary text-background-dark h-14 rounded-xl font-bold text-base flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">edit_note</span>
+                Create New Prescription
+            </button></a>
+<a href="Patient-idfinder.html"><button class="w-full bg-transparent border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 h-14 rounded-xl font-bold text-base flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">history</span>
+                View Full Patient History
+            </button></a>
+</div>
+</div>
+
+</body></html>

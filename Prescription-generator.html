@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="light dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Prescription Generator - Arogya-Vediya</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#39E079", "background-light": "#f6f8f7", "background-dark": "#122017"}, fontFamily: {display: "Noto Serif"}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}}}};</script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .ios-status-bar {
+            height: 44px;
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 20px -2px rgba(54, 105, 176, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#101419] dark:text-gray-100">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+<div class="ios-status-bar w-full"></div>
+<div class="flex items-center px-4 py-2 justify-between h-14">
+<div class="flex items-center gap-3">
+<a href="Doctorview.html"><button class="p-1 -ml-1 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary">arrow_back_ios_new</span>
+</button></a>
+<h1 class="text-lg font-bold tracking-tight">Prescription Generator</h1>
+</div>
+<div class="flex gap-2">
+<button class="size-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto pb-32">
+<!-- Patient Context Card -->
+<section class="p-4">
+<div class="bg-white dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 rounded-xl p-4 custom-shadow flex items-center gap-4">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden border-2 border-primary/20">
+<img alt="Patient Profile Image" class="w-full h-full object-cover" data-alt="Close up portrait of a patient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoZ0TsMKFFTUR2nuy0IwWGoAS-BQtrdHU3fnOYNWabTKDDDHooXgn94XeU7rv2AFSTeAydCat55bwh1jQ6KaQ-3_4Wt2JKr5e7iwe4nyBuxvzqkz2ew9q2eO0CptVHYYooQqyR6Zxat1zpc9wFpTQ2hx_wnI-Bbm8sU2PoFKBKC8lEzoNIEHZdM0GzSHP5wMRjcIgckgd0ai38a7xMraV8GhhVgH3NV4zDzU3qkIa0jExrHP6mNp2vxddZAq1Ala2XY7R2ywIWCQ"/>
+</div>
+<div class="flex flex-col">
+<h2 class="text-lg font-bold text-primary">Arjun Mehta</h2>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold px-2 py-0.5 bg-primary/10 text-primary rounded-full uppercase tracking-wider">Virtual ID</span>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase">AV-88231-09</p>
+</div>
+</div>
+<div class="ml-auto">
+<span class="material-symbols-outlined text-green-500">verified</span>
+</div>
+</div>
+</section>
+<!-- Medication Entry Section -->
+<section class="px-4 py-2">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-sm font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">Clinical Input</h3>
+<span class="text-xs text-primary font-medium">Clear All</span>
+</div>
+<div class="relative group">
+<textarea class="w-full rounded-xl border-2 border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30 p-4 min-h-[160px] text-base focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400 resize-none font-display" placeholder="Enter Medicine/Tablet Names (e.g., Amoxicillin 500mg, Paracetamol 650mg)..."></textarea>
+<div class="absolute bottom-3 right-3 flex gap-2">
+<button class="size-8 bg-white dark:bg-gray-700 rounded-lg flex items-center justify-center shadow-sm text-gray-400">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button class="size-8 bg-white dark:bg-gray-700 rounded-lg flex items-center justify-center shadow-sm text-gray-400">
+<span class="material-symbols-outlined text-[20px]">camera_alt</span>
+</button>
+</div>
+</div>
+</section>
+<!-- AI Trigger -->
+<section class="px-4 py-6">
+<a href="Prescription.html"><button class="w-full bg-primary hover:bg-primary/90 text-white h-14 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-primary/20 transition-transform active:scale-[0.98]">
+<span class="material-symbols-outlined animate-pulse">auto_awesome</span>
+<span>Generate AI Prescription</span>
+</button></a>
+</section>
+<!-- AI Output Result Section -->
+<section class="px-4 space-y-4">
+<div class="flex items-center gap-2 text-primary font-bold px-1">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="text-sm tracking-wide uppercase">AI-Generated Recommendations</span>
+</div>
+<!-- Dosage Instructions -->
+<div class="bg-blue-50/50 dark:bg-primary/5 border border-primary/20 rounded-xl overflow-hidden">
+<div class="bg-primary/10 px-4 py-2 flex items-center justify-between border-b border-primary/10">
+<span class="text-xs font-bold text-primary flex items-center gap-1 uppercase">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                        Dosage Instructions
+                    </span>
+<span class="text-[10px] bg-white/50 dark:bg-gray-800 px-2 py-0.5 rounded text-primary font-bold">DRAFT</span>
+</div>
+<div class="p-4 space-y-3">
+<div class="flex gap-3">
+<div class="size-6 bg-white dark:bg-gray-800 rounded flex items-center justify-center text-primary shrink-0 border border-primary/10">
+<span class="text-xs font-bold">1</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold">Amoxicillin 500mg</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">1 capsule three times daily for 7 days. Must be completed even if feeling better.</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="size-6 bg-white dark:bg-gray-800 rounded flex items-center justify-center text-primary shrink-0 border border-primary/10">
+<span class="text-xs font-bold">2</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold">Paracetamol 650mg</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">1 tablet every 6 hours as needed for pain or fever. Max 4 tablets daily.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Safety Alerts -->
+<div class="bg-red-50/50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 rounded-xl overflow-hidden">
+<div class="bg-red-100/50 dark:bg-red-900/20 px-4 py-2 flex items-center border-b border-red-100 dark:border-red-900/20">
+<span class="text-xs font-bold text-red-600 dark:text-red-400 flex items-center gap-1 uppercase">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+                        Safety &amp; Side Effects
+                    </span>
+</div>
+<div class="p-4">
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-xs text-red-700 dark:text-red-300">
+<span class="material-symbols-outlined text-[14px] mt-0.5">circle</span>
+<span>May cause nausea. Take with meals to reduce gastric irritation.</span>
+</li>
+<li class="flex items-start gap-2 text-xs text-red-700 dark:text-red-300">
+<span class="material-symbols-outlined text-[14px] mt-0.5">circle</span>
+<span>Avoid alcohol consumption while on Amoxicillin.</span>
+</li>
+</ul>
+</div>
+</div>
+<p class="text-[10px] text-center text-gray-400 italic px-4 pb-4">
+                Disclaimer: AI suggestions are for clinical decision support and must be validated by a licensed physician before finalizing.
+            </p>
+</section>
+</main>
+<!-- Sticky Footer Actions -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 px-4 pt-4 pb-8 z-50">
+<div class="max-w-md mx-auto flex gap-3">
+<button class="flex-[1] h-12 border-2 border-primary/20 text-primary font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/5">
+<span class="material-symbols-outlined">edit</span>
+                Edit
+            </button>
+<button class="flex-[2] h-12 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">draw</span>
+                Confirm &amp; Sign
+            </button>
+</div>
+</footer>
+</body></html>

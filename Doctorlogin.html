@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html class="light dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doctor Login Portal - Arogya-Vediya</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#39E079", "background-light": "#f6f8f7", "background-dark": "#122017"}, fontFamily: {display: "Noto Serif"}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}}}};</script>
+<style>body {
+    font-family: "Manrope", sans-serif
+    }
+.flag-watermark {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA7TkoqkKSqKnXTDd4uOcUS5s9oAE4YigwEH4N5ObDSm3aNStOrjYAVXz-5hBfroA2imNKzQiC47XkAWqmdp_9q9iVWbCx0b79b0gcegKO7j9xr77cevpDSv8HGTbDfH8_U_syh6EOI5tXu6srI681VTn2M_pHxWy4baRsTQekvzFzwiKM861iRnR1le5cRvPsZxmrYEOL677RK7vkACdFobJGdgklXdzAA15jiTfokEDGbW9u8fPxiIF7rbKsoDqcnf6PXJrcC8g);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    opacity: 0.04;
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 0
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen relative overflow-x-hidden">
+<!-- Subtle Watermark Background -->
+<div class="flag-watermark" data-alt="Subtle Indian flag outline watermark background"></div>
+<div class="relative z-10 flex flex-col min-h-screen max-w-[480px] mx-auto pb-10">
+<!-- TopAppBar Navigation -->
+<div class="flex items-center bg-transparent p-4 pb-2 justify-between">
+<div class="text-[#0f141a] dark:text-white flex size-12 shrink-0 items-center cursor-pointer">
+<a href="mainlogin.html"><span class="material-symbols-outlined">arrow_back_ios</span></a>
+</div>
+<h2 class="text-[#0f141a] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Portal Access</h2>
+</div>
+<!-- Header Section with Logo -->
+<div class="flex flex-col items-center pt-8 pb-4">
+<div class="w-24 h-24 mb-6 rounded-full bg-white dark:bg-gray-800 shadow-xl flex items-center justify-center p-2 border border-gray-100 dark:border-gray-700">
+<img alt="IMA Logo" class="w-full h-auto" data-alt="Indian Medical Association official logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlRXZgMWkm_K4KNsKdxrNJcjZfOhHj0ySK88hngGGAXffuTec5AkUM2N2UJz2wt8O2ds-9kF44XCTyJWklYT_B86d309hO68OhbLy_Xh1kBNqD3pxfWSB81eGSAfVcE5aMbq7fIXjCbKbhCVLjiDACX5jX-c-Jrc6PDpXakPxj0GjLiHHZwRGSlQ_zp4fO-YvvWMz3bD2OU4QtBET94zDxDzj21WNhAivNhAcxg5AjrKzDRf8wjdntjbHnA8J7XBREZn4hRzmI0w"/>
+</div>
+<h1 class="text-[#0f141a] dark:text-white tracking-tight text-[28px] font-extrabold leading-tight px-4 text-center">
+                Arogya-Vediya
+            </h1>
+<p class="text-[#556e91] dark:text-gray-400 text-base font-medium leading-normal pt-1 px-4 text-center">
+                Healthcare Professional Portal
+            </p>
+</div>
+<!-- Login Form Card -->
+<div class="mx-4 mt-4 bg-white dark:bg-gray-900 rounded-xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] p-6 border border-gray-50 dark:border-gray-800">
+<h3 class="text-gray-900 dark:text-white text-xl font-bold mb-6 text-center">Doctor Login</h3>
+<!-- TextField: Hospital Name -->
+<div class="mb-5">
+<label class="flex flex-col w-full">
+<p class="text-[#0f141a] dark:text-gray-200 text-sm font-semibold leading-normal pb-2 px-1">Hospital Name</p>
+<div class="flex w-full items-stretch rounded-lg group">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0f141a] dark:text-white focus:outline-0 focus:ring-1 focus:ring-primary border border-[#d2dae5] dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-primary h-14 placeholder:text-[#556e91] p-[15px] rounded-r-none border-r-0 text-base font-normal leading-normal transition-all" placeholder="Enter affiliated hospital" type="text" value=""/>
+<div class="text-[#556e91] flex border border-[#d2dae5] dark:border-gray-700 bg-gray-50 dark:bg-gray-800 items-center justify-center pr-[15px] rounded-r-lg border-l-0">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+</div>
+</label>
+</div>
+<!-- TextField: Doctor Name -->
+<div class="mb-5">
+<label class="flex flex-col w-full">
+<p class="text-[#0f141a] dark:text-gray-200 text-sm font-semibold leading-normal pb-2 px-1">Doctor Name</p>
+<div class="flex w-full items-stretch rounded-lg group">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0f141a] dark:text-white focus:outline-0 focus:ring-1 focus:ring-primary border border-[#d2dae5] dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-primary h-14 placeholder:text-[#556e91] p-[15px] rounded-r-none border-r-0 text-base font-normal leading-normal transition-all" placeholder="Enter full name" type="text" value=""/>
+<div class="text-[#556e91] flex border border-[#d2dae5] dark:border-gray-700 bg-gray-50 dark:bg-gray-800 items-center justify-center pr-[15px] rounded-r-lg border-l-0">
+<span class="material-symbols-outlined">person</span>
+</div>
+</div>
+</label>
+</div>
+<!-- TextField: Doctor ID -->
+<div class="mb-8">
+<label class="flex flex-col w-full">
+<p class="text-[#0f141a] dark:text-gray-200 text-sm font-semibold leading-normal pb-2 px-1">Doctor ID (URN)</p>
+<div class="flex w-full items-stretch rounded-lg group">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0f141a] dark:text-white focus:outline-0 focus:ring-1 focus:ring-primary border border-[#d2dae5] dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-primary h-14 placeholder:text-[#556e91] p-[15px] rounded-r-none border-r-0 text-base font-normal leading-normal transition-all" placeholder="Enter Unique Registration Number" type="text" value=""/>
+<div class="text-[#556e91] flex border border-[#d2dae5] dark:border-gray-700 bg-gray-50 dark:bg-gray-800 items-center justify-center pr-[15px] rounded-r-lg border-l-0">
+<span class="material-symbols-outlined">badge</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Primary Action Button -->
+<a href="Doctorview.html"><button class="w-full h-14 bg-primary hover:bg-primary/90 text-white rounded-lg text-lg font-bold tracking-wide shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2">
+<span>Login to Portal</span>
+<span class="material-symbols-outlined">login</span>
+</button></a>
+<!-- Secondary Links -->
+<div class="mt-6 flex flex-col items-center gap-3">
+<a class="text-[#556e91] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Forgot ID or Need Help?</a>
+</div>
+</div>
+<!-- Footer Text -->
+<div class="mt-auto px-10 text-center pt-8">
+<p class="text-xs text-[#556e91] dark:text-gray-500 leading-relaxed">
+                Securely accessing the Arogya-Vediya Health Network. Having trouble logging in? <br/>
+<a class="text-primary font-semibold underline underline-offset-2" href="#">Contact Administrator</a>
+</p>
+</div>
+<!-- Spacer for iOS bottom home indicator -->
+<div class="h-8"></div>
+</div>
+</body></html>

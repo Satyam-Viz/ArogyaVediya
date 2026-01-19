@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html class="light dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arogya-Vediya - Patient Portal Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#39E079", "background-light": "#f6f8f7", "background-dark": "#122017", "medical-blue": "#0a4b78", "medical-accent": "#1e3a8a"}, fontFamily: {display: "Noto Serif"}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}}}};</script>
+<style>
+        body {
+            font-family: "Spline Sans", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-medical-blue dark:text-white transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-[430px] mx-auto border-x border-gray-100 dark:border-zinc-800 shadow-2xl">
+<!-- TopAppBar with Logo -->
+<header class="flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 p-4 pb-2 justify-between">
+<a href="mainlogin.html"><div class="flex size-12 shrink-0 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary shadow-sm" data-alt="Official IMA Medical Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVRZ_Q3d10OB8xodlw0I6NGZFjxQ-AkOr3iznQ_Bu7nERc8gj0wUP634oRChA044Bfr1qWM7l7TxZSqMgbLl9_vnl7RxBv8JLIPYHcKQ56gw8Sr2wxgGmV_TdnVLGJr8Fi6_Wx0Yc6wMjdCGs47ft2bYWcNhSr9dw6K-K0vz3OE7lo2ytmsTmrusw1OOA3jn6ujvvj4UsarvEsXhbVXYL4W1XWBXlI8-iYVoAQk_aQPZ48VMPK8Bt_Tsv9PmfWBqnL2aOPxIrryw");'></div>
+</div></a>
+<h2 class="text-medical-blue dark:text-primary text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Arogya-Vediya</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-full h-10 w-10 bg-primary/10 text-medical-blue dark:text-primary">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</button>
+</div>
+</header>
+<!-- Headline Content -->
+<div class="flex flex-col items-center pt-8 pb-4">
+<h1 class="text-medical-blue dark:text-white tracking-tight text-[32px] font-bold leading-tight px-6 text-center">
+                Welcome back, <span class="text-medical-accent dark:text-primary/90">Patient</span>
+</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-2">Secure access to your medical history</p>
+</div>
+<!-- Biometric Scan Section -->
+<div class="flex flex-col items-center justify-center py-10">
+<div class="relative group cursor-pointer">
+<!-- Visual pulse background -->
+<div class="absolute inset-0 bg-primary/20 rounded-full scale-125"></div>
+<div class="relative flex items-center justify-center w-32 h-32 bg-white dark:bg-zinc-800 rounded-full shadow-xl border-4 border-primary">
+<span class="material-symbols-outlined text-primary text-[64px]">fingerprint</span>
+</div>
+</div>
+<div class="mt-8">
+<button class="flex items-center justify-center rounded-full h-14 px-8 bg-primary text-medical-blue gap-3 shadow-lg hover:shadow-xl transition-all active:scale-95 font-bold text-lg">
+<span class="material-symbols-outlined text-[24px]">sensors</span>
+<span>Scan Fingerprint</span>
+</button>
+</div>
+</div>
+<!-- Section Header / Divider -->
+<div class="relative py-4 px-8">
+<div aria-hidden="true" class="absolute inset-0 flex items-center px-8">
+<div class="w-full border-t border-gray-200 dark:border-zinc-700"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-background-light dark:bg-background-dark px-4 text-xs font-bold uppercase tracking-widest text-gray-400">or use Virtual ID</span>
+</div>
+</div>
+<!-- TextField for Virtual ID -->
+<div class="flex flex-col px-6 py-4">
+<div class="flex flex-col w-full">
+<label class="text-medical-blue dark:text-gray-300 text-sm font-bold mb-2 ml-1">Virtual ID</label>
+<div class="relative flex items-center">
+<input class="form-input flex w-full rounded-full border-2 border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-center text-2xl font-bold tracking-[0.5em] text-medical-blue dark:text-white focus:border-primary focus:ring-0 h-16 placeholder:text-gray-300 placeholder:tracking-normal" maxlength="3" placeholder="A12" type="text"/>
+<div class="absolute right-4 text-gray-400">
+<span class="material-symbols-outlined">pin</span>
+</div>
+</div>
+<p class="text-[10px] text-gray-400 text-center mt-2 uppercase tracking-tighter">3-digit alphanumeric security code</p>
+</div>
+</div>
+<!-- Main Action Button -->
+<div class="mt-auto px-6 py-8">
+<a href="patientview2.html"><button class="flex w-full cursor-pointer items-center justify-center rounded-full h-16 bg-medical-blue text-white dark:bg-primary dark:text-medical-blue gap-3 text-lg font-bold shadow-2xl active:scale-[0.98] transition-transform">
+<span>Access My Records</span>
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button></a>
+<!-- Links and Security Badge -->
+<div class="flex flex-col items-center gap-4 mt-8">
+<div class="flex gap-6 text-sm font-semibold">
+<a class="text-medical-accent dark:text-primary/70 border-b border-transparent hover:border-current" href="#">Forgot ID?</a>
+<a class="text-medical-accent dark:text-primary/70 border-b border-transparent hover:border-current" href="#">Register</a>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-zinc-800 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-green-600">lock</span>
+<span class="text-[11px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">End-to-End Encrypted Session</span>
+</div>
+</div>
+</div>
+<!-- iOS Home Indicator Space -->
+<div class="h-8 w-full"></div>
+</div>
+</body></html>
